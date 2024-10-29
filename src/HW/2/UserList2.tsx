@@ -13,9 +13,11 @@ export const UserList2 = (props: UserList2PropsType) => {
 
 			<button id={'hw02-filter-button'} onClick={() => props.filterUsers}>SHOW ME FRIENDS FROM LA</button>
 			
+			{/* <button id={'hw02-filter-button'} onClick={() => alert("D")}>SHOW ME FRIENDS FROM LA</button> */}
 			<ul>
 			    {props.users.myFriends.map((user) => (
-			    <CurrentUser user={user} />
+			    //<ВЫЗЫВАЕМ КОМПОНЕНТУ CurrentUser />
+				<CurrentUser  key={user.id} user={user} />
 			    ))}
 			</ul>
 		</div>

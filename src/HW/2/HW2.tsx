@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { UserList2 } from './UserList2';
 
 export type AddressType = {
@@ -42,13 +42,15 @@ export const HW2 = () => {
       { id: 9, name: 'Jessica', age: 12, address: { street: '543 Willow Dr', city: 'San Francisco' } },
       { id: 10, name: 'Emily', age: 55, address: { street: '765 Aspen Blvd', city: 'Los Angeles' } },
     ]
-  }
+  };
 
   let [currentUsers, setCurrentUsers] = useState<UsersObjectType>(users);
 
   const filterUsers = () => {
-    const filteredUsers = users.myFriends.filter((currentUsers) => currentUsers.address.city='Los Angeles');
+    //const filteredUsers = 'НУЖНО ПРОФИЛЬТРОВАТЬ ДРУЗЕЙ. ОСТАВЛЯЕМ ТОЛЬКО ТЕХ, КОТОРЫЕ ЖИВУТ В ГОРОДЕ LOS ANGELES';
+    const filteredUsers = users.myFriends.filter(user => user.address.city !== 'Los Angeles');
     setCurrentUsers({ myFriends: filteredUsers });
+    
   };
 
   return (
