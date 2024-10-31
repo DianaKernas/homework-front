@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { UserList2 } from './UserList2';
 
 export type AddressType = {
@@ -29,7 +29,7 @@ export const HW2 = () => {
 
   // ❗ Массив с данными не трогаем!
 
-  const users = {
+  const users: UsersObjectType = {
     myFriends:[
       { id: 1, name: 'John', age: 25, address: { street: '123 Main St', city: 'New York' } },
       { id: 2, name: 'Alice', age: 30, address: { street: '456 Elm St', city: 'San Francisco' } },
@@ -48,7 +48,8 @@ export const HW2 = () => {
 
   const filterUsers = () => {
     //const filteredUsers = 'НУЖНО ПРОФИЛЬТРОВАТЬ ДРУЗЕЙ. ОСТАВЛЯЕМ ТОЛЬКО ТЕХ, КОТОРЫЕ ЖИВУТ В ГОРОДЕ LOS ANGELES';
-    const filteredUsers = users.myFriends.filter(user => user.address.city !== 'Los Angeles');
+    const filteredUsers = users.myFriends.filter(user => user.address.city === 'Los Angeles');
+
     setCurrentUsers({ myFriends: filteredUsers });
     
   };
